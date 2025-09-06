@@ -13,14 +13,13 @@
     # search for files by name, faster than find
     fd
     # search for files by its content, replacement of grep
-    (ripgrep.override { withPCRE2 = true; })
+    ripgrep
 
     # A fast and polyglot tool for code searching, linting, rewriting at large scale
     # supported languages: only some mainstream languages currently(do not support nix/nginx/yaml/toml/...)
     ast-grep
 
     sad # CLI search and replace, just like sed, but with diff preview.
-    yq-go # yaml processor https://github.com/mikefarah/yq
     just # a command runner like make, but simpler
     hyperfine # command-line benchmarking tool
     gping # ping, but with a graph(TUI)
@@ -34,7 +33,6 @@
     # it provides the command `nom` works just like `nix
     # with more details log output
     nix-output-monitor
-    hydra-check # check hydra(nix's build farm) for the build status of a package
     nix-index # A small utility to index nix store paths
     nix-init # generate nix derivation from url
     # https://github.com/nix-community/nix-melt
@@ -105,7 +103,6 @@
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
-    enableZshIntegration = true;
     enableNushellIntegration = true;
   };
 
@@ -116,7 +113,6 @@
   programs.atuin = {
     enable = true;
     enableBashIntegration = true;
-    enableZshIntegration = true;
     enableNushellIntegration = true;
   };
 }

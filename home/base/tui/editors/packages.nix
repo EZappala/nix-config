@@ -16,11 +16,7 @@
         deadnix # Find and remove unused code in .nix source files
         nixfmt # Nix Code Formatter
 
-        #-- nickel lang
-        nickel
-
         #-- json like
-        # terraform  # install via brew on macOS
         terraform-ls
         jsonnet
         jsonnet-language-server
@@ -28,15 +24,10 @@
         nodePackages.yaml-language-server
         actionlint # GitHub Actions linter
 
-        #-- dockerfile
-        hadolint # Dockerfile linter
-        nodePackages.dockerfile-language-server-nodejs
-
         #-- markdown
         marksman # language server for markdown
         glow # markdown previewer
         pandoc # document converter
-        pkgs-unstable.hugo # static site generator
 
         #-- sql
         sqlfluff
@@ -100,13 +91,6 @@
           gopls # go language server
           delve # go debugger
 
-          # -- java
-          jdk17
-          gradle
-          maven
-          spring-boot-cli
-          jdt-language-server
-
           #-- zig
           zls
 
@@ -129,17 +113,6 @@
         nodePackages."@tailwindcss/language-server"
         emmet-ls
       ]
-      # -*- Lisp like Languages -*-#
-      # ++ [
-      #   guile
-      #   racket-minimal
-      #   fnlfmt # fennel
-      #   (
-      #     if pkgs.stdenv.isLinux && pkgs.stdenv.isx86
-      #     then pkgs-unstable.akkuPackages.scheme-langserver
-      #     else pkgs.emptyDirectory
-      #   )
-      # ]
       ++ [
         proselint # English prose linter
 
@@ -150,7 +123,7 @@
         nodePackages.prettier # common code formatter
         fzf
         gdu # disk usage analyzer, required by AstroNvim
-        (ripgrep.override { withPCRE2 = true; }) # recursively searches directories for a regex pattern
+        ripgrep # recursively searches directories for a regex pattern
       ]
     );
 }

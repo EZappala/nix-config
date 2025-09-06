@@ -13,13 +13,8 @@ in
     #
     # currently, nushell does not support conditional sourcing of files
     # https://github.com/nushell/nushell/issues/8214
+    # TODO: cull unneeded shell completions, aliases, modules
     extraConfig = ''
-      source /etc/agenix/alias-for-work.nushell
-
-      # using claude-code with kimi k2
-      $env.ANTHROPIC_BASE_URL = "https://api.moonshot.cn/anthropic/"
-      $env.ANTHROPIC_API_KEY = $env.MOONSHOT_API_KEY
-
       # Directories in this constant are searched by the
       # `use` and `source` commands.
       const NU_LIB_DIRS = $NU_LIB_DIRS ++ ['${nu_scripts}/share/nu_scripts']
@@ -36,7 +31,6 @@ in
       use custom-completions/ssh/ssh-completions.nu *
       use custom-completions/tar/tar-completions.nu *
       use custom-completions/tcpdump/tcpdump-completions.nu *
-      use custom-completions/zellij/zellij-completions.nu *
       # use custom-completions/zoxide/zoxide-completions.nu *
 
       # alias
@@ -47,7 +41,6 @@ in
       # modules
       use modules/argx *
       use modules/lg *
-      use modules/kubernetes *
     '';
   };
 }

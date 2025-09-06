@@ -4,9 +4,6 @@
   home.packages = with pkgs; [
     # misc
     libnotify
-    wireguard-tools # manage wireguard vpn manually, via wg-quick
-
-    virt-viewer # vnc connect to VM, used by kubevirt
   ];
 
   # auto mount usb drives

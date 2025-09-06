@@ -56,10 +56,7 @@ in
           executable = true;
         };
       }
-      (import ./settings.nix niri)
-      (import ./keybindings.nix niri)
-      (import ./spawn-at-startup.nix niri)
-      (import ./windowrules.nix niri)
+      (import ./niri.nix niri)
     ]
   );
 

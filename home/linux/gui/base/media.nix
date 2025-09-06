@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgs-unstable,
-  nur-ryan4yin,
   ...
 }:
 # media - control and enjoy audio/video

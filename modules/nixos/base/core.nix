@@ -7,5 +7,5 @@
     consoleMode = lib.mkDefault "max";
   };
 
-  boot.loader.timeout = lib.mkDefault 8; # wait for x seconds to select the boot entry
+  boot.loader.timeout = lib.mkDefault 5; # wait for x seconds to select the boot entry
 }

@@ -21,17 +21,13 @@
     settings = {
       git_protocol = "ssh";
       prompt = "enabled";
-      aliases = {
-        co = "pr checkout";
-        pv = "pr view";
-      };
     };
     hosts = {
       "github.com" = {
         "users" = {
-          "ryan4yin" = null;
+          "ezappala" = null;
         };
-        "user" = "ryan4yin";
+        "user" = "ezappala";
       };
     };
   };
@@ -43,14 +39,6 @@
     userName = myvars.userfullname;
     userEmail = myvars.useremail;
 
-    includes = [
-      {
-        # use different email & name for work
-        path = "~/work/.gitconfig";
-        condition = "gitdir:~/work/";
-      }
-    ];
-
     extraConfig = {
       init.defaultBranch = "main";
       trim.bases = "develop,master,main"; # for git-trim
@@ -60,15 +48,9 @@
 
       # replace https with ssh
       url = {
-        "ssh://git@github.com/ryan4yin" = {
-          insteadOf = "https://github.com/ryan4yin";
+        "ssh://git@github.com/ezappala" = {
+          insteadOf = "https://github.com/ezappala";
         };
-        # "ssh://git@gitlab.com/" = {
-        #   insteadOf = "https://gitlab.com/";
-        # };
-        # "ssh://git@bitbucket.com/" = {
-        #   insteadOf = "https://bitbucket.com/";
-        # };
       };
     };
 
@@ -117,9 +99,6 @@
       foreach = "submodule foreach";
     };
   };
-
-  # Git terminal UI (written in go).
-  programs.lazygit.enable = true;
 
   # Yet another Git TUI (written in rust).
   programs.gitui.enable = true;

@@ -6,10 +6,7 @@ ignore-files = true
 # Typos-specific ignore globs (gitignore syntax).
 # NOTE: This setting is ignored when you pass the path directly on the command line, as cachix/git-hooks.nix does.
 # To ignore those files, you must also exclude those directories via git-hooks.hooks.typos.settings.exclude.
-extend-exclude = [
-  "data/",
-  "rime-data/",
-]
+extend-exclude = ["data/", "rime-data/"]
 
 [default]
 # Check binary files as text.

@@ -45,8 +45,8 @@
     {
       "mako".source = mkSymlink "${confPath}/mako";
       "waybar".source = mkSymlink "${confPath}/waybar";
-      "wlogout".source = mkSymlink "${confPath}/wlogout";
-      "hypr/hypridle.conf".source = mkSymlink "${confPath}/hypridle.conf";
+      # "wlogout".source = mkSymlink "${confPath}/wlogout";
+      # "hypr/hypridle.conf".source = mkSymlink "${confPath}/hypridle.conf";
     };
 
   # status bar
@@ -55,19 +55,19 @@
     systemd.enable = true;
   };
   # Disable catppuccin to avoid conflict with my non-nix config.
-  catppuccin.waybar.enable = false;
+  # catppuccin.waybar.enable = false;
 
   # screen locker
-  programs.swaylock.enable = true;
+  # programs.swaylock.enable = true;
 
   # Logout Menu
-  programs.wlogout.enable = true;
-  catppuccin.wlogout.enable = false;
+  # programs.wlogout.enable = true;
+  # catppuccin.wlogout.enable = false;
 
   # Hyprland idle daemon
-  services.hypridle.enable = true;
+  # services.hypridle.enable = true;
 
   # notification daemon, the same as dunst
   services.mako.enable = true;
-  catppuccin.mako.enable = false;
+  # catppuccin.mako.enable = false;
 }

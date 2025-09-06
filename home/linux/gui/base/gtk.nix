@@ -8,6 +8,7 @@
   # try setting them with home.pointerCursor and gtk.theme,
   # which enable a bunch of compatibility options that should make the themes load in all situations.
 
+# TODO: Play with this theme
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
