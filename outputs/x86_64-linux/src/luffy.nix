@@ -54,13 +54,18 @@ let
   #   ++ base-modules.home-modules;
   # };
 
+
   modules-niri = {
     nixos-modules = [
-      { programs.niri.enable = true; }
+      { 
+        programs.niri.enable = true; 
+      }
     ]
     ++ base-modules.nixos-modules;
     home-modules = [
-      { modules.desktop.niri.enable = true; }
+      { 
+        modules.desktop.niri.enable = true; 
+      }
     ]
     ++ base-modules.home-modules;
   };
@@ -72,8 +77,7 @@ in
     "${name}" = mylib.nixosSystem (modules-niri // args);
   };
 
-  # generate iso image for hosts with desktop environment
-  # packages = {
+  # generate iso image for hosts with desktop environment packages = {
   #   # "${name}-hyprland" = inputs.self.nixosConfigurations."${name}-hyprland".config.formats.iso;
   #   "${name}" = inputs.self.nixosConfigurations."${name}-niri".config.formats.iso;
   # };
