@@ -39,7 +39,7 @@
     fonts = with pkgs; [
       {
         name = "Commitmono Nerd Font";
-        package = nerd-fonts.commitmono;
+        package = nerd-fonts.commit-mono;
       }
     ];
     extraOptions = "--term xterm-256color";

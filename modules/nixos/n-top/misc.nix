@@ -30,6 +30,11 @@
   environment.systemPackages = with pkgs; [
     gnumake
     wl-clipboard
+    xorg.libX11
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXrandr
+    libxkbcommon
   ];
 
   services = {

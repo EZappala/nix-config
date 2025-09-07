@@ -11,7 +11,8 @@ in
     ./nvidia.nix
   ];
 
-  services.sunshine.enable = lib.mkForce true;
+  boot.loader.systemd-boot.enable = true;
+
 
   networking = {
     inherit hostName;
