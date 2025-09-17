@@ -1,24 +1,5 @@
 { pkgs, ... }:
 {
-  xdg.terminal-exec = {
-    enable = true;
-    package = pkgs.xdg-terminal-exec-mkhl;
-    settings =
-      let
-        my_terminal_desktop = [
-          # NOTE: We have add these packages at user level
-          "com.mitchellh.ghostty.desktop"
-        ];
-      in
-      {
-        GNOME = my_terminal_desktop ++ [
-          "com.raggesilver.BlackBox.desktop"
-          "org.gnome.Terminal.desktop"
-        ];
-        default = my_terminal_desktop;
-      };
-  };
-
   xdg.portal = {
     enable = true;
 
@@ -27,6 +8,7 @@
         # Use xdg-desktop-portal-gtk for every portal interface...
         default = [
           "gtk"
+          "hyprland"
         ];
         # except for the secret portal, which is handled by gnome-keyring
         "org.freedesktop.impl.portal.Secret" = [
@@ -42,10 +24,11 @@
     # alacritty as an example, it use xdg-open as default, but you can also custom this behavior
     # and vscode has open like `External Uri Openers`
     xdgOpenUsePortal = true;
-
-    # ls /run/current-system/sw/share/xdg-desktop-portal/portals/
+    # ls /etc/profiles/per-user/ryan/share/xdg-desktop-portal/portals
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk # for provides file picker / OpenURI
+      # xdg-desktop-portal-wlr
+      xdg-desktop-portal-hyprland # for Hyprland
     ];
   };
 }

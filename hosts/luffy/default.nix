@@ -13,10 +13,8 @@ in
 
   boot.loader.systemd-boot.enable = true;
 
-
   networking = {
     inherit hostName;
-
     # we use networkd instead
     networkmanager.enable = false; # provides nmcli/nmtui for wifi adjustment
     useDHCP = false;

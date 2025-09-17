@@ -65,7 +65,7 @@
     };
 
     nuenv = {
-      url = "github:DeterminateSystems/nuenv"; 
+      url = "github:DeterminateSystems/nuenv";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -83,8 +83,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    niri = { 
-      url = "github:sodiboo/niri-flake/main"; 
+    hyprshell = {
+      url = "github:H3rmt/hyprshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

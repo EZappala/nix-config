@@ -8,7 +8,6 @@
   mylib,
   system,
   genSpecialArgs,
-  niri,
   ...
 }@args:
 let
@@ -29,11 +28,10 @@ let
         # "hardening/bwraps"
       ])
       ++ [
-        inputs.niri.nixosModules.niri
+        #inputs.niri.nixosModules.niri
         {
           modules.desktop.fonts.enable = true;
           modules.desktop.wayland.enable = true;
-          # modules.secrets.desktop.enable = true;
         }
       ];
     home-modules = map mylib.relativeToRoot [
@@ -44,37 +42,36 @@ let
     ];
   };
 
-  # modules-hyprland = {
-  #   nixos-modules = [
-  #   ]
-  #   ++ base-modules.nixos-modules;
-  #   home-modules = [
-  #     { modules.desktop.hyprland.enable = true; }
-  #   ]
-  #   ++ base-modules.home-modules;
-  # };
-
-
-  modules-niri = {
+  modules-hyprland = {
     nixos-modules = [
-      { 
-        programs.niri.enable = true; 
-      }
     ]
     ++ base-modules.nixos-modules;
     home-modules = [
-      { 
-        modules.desktop.niri.enable = true; 
-      }
+      { modules.desktop.hyprland.enable = true; }
     ]
     ++ base-modules.home-modules;
   };
+
+  #modules-niri = {
+  #  nixos-modules = [
+  #    {
+  #      programs.niri.enable = true;
+  #    }
+  #  ]
+  #  ++ base-modules.nixos-modules;
+  #  home-modules = [
+  #    {
+  #      modules.desktop.niri.enable = true;
+  #    }
+  #  ]
+  #  ++ base-modules.home-modules;
+  #};
 in
 {
   nixosConfigurations = {
     # host with hyprland compositor
-    # "${name}-hyprland" = mylib.nixosSystem (modules-hyprland // args);
-    "${name}" = mylib.nixosSystem (modules-niri // args);
+    "${name}" = mylib.nixosSystem (modules-hyprland // args);
+    #"${name}" = mylib.nixosSystem (modules-niri // args);
   };
 
   # generate iso image for hosts with desktop environment packages = {
