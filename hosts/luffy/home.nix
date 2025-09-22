@@ -1,6 +1,9 @@
 { config, niri, ... }:
 {
   modules.desktop.nvidia.enable = true;
+  modules.desktop.hyprland.settings.source = [
+    "${config.home.homeDirectory}/nixos/hosts/luffy/hypr-hardwrae.conf"
+  ];
 
   #  modules.desktop.niri = {
   #    settings =

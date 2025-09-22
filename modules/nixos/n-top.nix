@@ -19,8 +19,6 @@ in
     ./n-top
   ];
 
-  programs.hyprland.enable = true;
-
   options.modules.desktop = {
     wayland = {
       enable = mkEnableOption "Wayland Display Server";
@@ -63,6 +61,8 @@ in
 
       # fix https://github.com/ryan4yin/nix-config/issues/10
       security.pam.services.swaylock = { };
+
+      programs.hyprland.enable = true;
     })
   ];
 }

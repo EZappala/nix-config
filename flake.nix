@@ -82,10 +82,5 @@
       url = "github:edolstra/nix-warez?dir=blender";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprshell = {
-      url = "github:H3rmt/hyprshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 }
