@@ -11,7 +11,7 @@
     settings = {
       "$mod" = "SUPER";
       bind = [
-        "$mod, F, exec, zen"
+        "$mod, F, exec, chromium"
         "$mod, T, exec, ghostty"
         "$mod, F12, exec, reboot"
         "$mod, Q, killactive"

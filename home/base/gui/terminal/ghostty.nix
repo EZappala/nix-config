@@ -14,10 +14,15 @@
     package = ghostty.packages.${pkgs.system}.default; # the latest version
     enableBashIntegration = false;
     installBatSyntax = false;
-    installVimSyntax = true;
+    installVimSyntax = false;
     settings = {
       font-family = "";
       font-size = 13;
+      theme = "rose-pine-moon";
+      keybind = [
+        "ctrl+shift+h=previous_tab"
+        "ctrl+shift+l=next_tab"
+      ];
 
       # https://ghostty.org/docs/config/reference#command
       #  To resolve issues:

@@ -39,6 +39,7 @@
     userName = myvars.userfullname;
     userEmail = myvars.useremail;
 
+    package = pkgs.gitFull;
     extraConfig = {
       init.defaultBranch = "main";
       trim.bases = "develop,master,main"; # for git-trim
@@ -52,6 +53,7 @@
           insteadOf = "https://github.com/ezappala";
         };
       };
+      credential.helper = "libsecret";
     };
 
     # signing = {

@@ -44,10 +44,13 @@ let
 
   modules-hyprland = {
     nixos-modules = [
+      { programs.hyprland.enable = true; }
     ]
     ++ base-modules.nixos-modules;
     home-modules = [
-      { modules.desktop.hyprland.enable = true; }
+      {
+        # modules.desktop.hyprland.enable = true;
+      }
     ]
     ++ base-modules.home-modules;
   };

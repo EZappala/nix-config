@@ -10,6 +10,7 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
+      autoformat = true,
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
@@ -22,6 +23,58 @@ return {
       },
       timeout_ms = 1000, -- default format timeout
     },
+
+    servers = {
+      ---- Data & Config languages ----
+      "jsonls",
+      "jsonnet_ls",
+      "yamlls",
+      "taplo",
+      "tinymist",
+      "selene",
+      "dagger",
+      "marksman",
+      "nixd",
+      "buf_ls",
+      "cmake",
+      "sqls",
+
+      ---- General Purpose Languages ----
+      "clangd",
+      "codelldb",
+      "gopls",
+      "rust_analyzer",
+      "pyright",
+      "ruff",
+      "zls",
+      "lua_ls",
+      "bashls",
+      "nushell",
+
+      ---- Web Dev ----
+      "ts_ls",
+      "tailwindcss",
+      "html",
+      "cssls",
+      "volar",
+    },
+
+    config = {
+      clangd = {
+        offsetEncoding = "utf-8",
+      },
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              extraEnv = { CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev" },
+              extraArgs = { "--profile", "rust-analyzer" },
+            },
+          },
+        },
+      },
+    },
+
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     -- customize how language servers are attached

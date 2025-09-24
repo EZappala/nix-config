@@ -16,7 +16,7 @@ in
   networking = {
     inherit hostName;
     # we use networkd instead
-    networkmanager.enable = false; # provides nmcli/nmtui for wifi adjustment
+    networkmanager.enable = true; # provides nmcli/nmtui for wifi adjustment
     useDHCP = false;
   };
 

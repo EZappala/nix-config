@@ -1,4 +1,5 @@
-{lib}: rec {
+{ lib }:
+rec {
   nameservers = [
     # IPv4
     "1.1.1.1" # Cloudflare
