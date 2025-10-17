@@ -6,14 +6,14 @@
 }@inputs:
 let
   inherit (inputs.nixpkgs) lib;
-  mylib = import ../lib {inherit lib;};
-  myvars = import ../vars {inherit lib;};
+  mylib = import ../lib { inherit lib; };
+  myvars = import ../vars { inherit lib; };
 
   # Passes custom lib, vars, nixpkgs instance, and all inputs to specialArgs.
   # These can be reused in all nixos/home-manager configs.
-  genSpecialArgs = 
+  genSpecialArgs =
     system:
-    inputs 
+    inputs
     // {
       inherit mylib myvars;
       pkgs-unstable = import inputs.nixpkgs-unstable {
@@ -54,7 +54,8 @@ let
   nixosSystemValues = builtins.attrValues nixosSystems;
   allSystemValues = nixosSystemValues;
   forAllSystems = func: (nixpkgs.lib.genAttrs allSystemNames func);
-in {
+in
+{
   debugAttrs = {
     inherit
       nixosSystems
@@ -120,7 +121,6 @@ in {
           # fix https://discourse.nixos.org/t/non-interactive-bash-errors-from-flake-nix-mkshell/33310
           bashInteractive
           # fix `cc` replaced by clang, which causes nvim-treesitter compilation error
-          gcc
           # Nix-related
           nixfmt
           deadnix

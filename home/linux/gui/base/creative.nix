@@ -2,7 +2,6 @@
   lib,
   pkgs,
   pkgs-unstable,
-  # pkgs-stable,
   nur-ryan4yin,
   blender-bin,
   ...
@@ -12,7 +11,7 @@
     with pkgs;
     [
       # creative
-      gimp      # image editing, I prefer using figma in browser instead of this one
+      gimp # image editing, I prefer using figma in browser instead of this one
       inkscape # vector graphics
       krita # digital painting
       musescore # music notation
@@ -21,6 +20,9 @@
 
       # 2d game design
       aseprite # Animated sprite editor & pixel art tool
+
+      # game dev
+      unityhub
 
       # this app consumes a lot of storage, so do not install it currently
       # kicad     # 3d printing, eletrical engineering

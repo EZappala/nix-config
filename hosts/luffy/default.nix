@@ -27,9 +27,10 @@ in
     matchConfig.Name = [ iface ];
     networkConfig = {
       DNS = nameservers;
-      DHCP = "ipv6"; # enable DHCPv6 only, so we can get a GUA.
-      IPv6AcceptRA = true; # for Stateless IPv6 Autoconfiguraton (SLAAC)
-      LinkLocalAddressing = "ipv6";
+      # DHCP = "ipv6"; # enable DHCPv6 only, so we can get a GUA.
+      DHCP = "ipv4";
+      # IPv6AcceptRA = true; # for Stateless IPv6 Autoconfiguraton (SLAAC)
+      # LinkLocalAddressing = "ipv6";
     };
   };
 
