@@ -1,5 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    hyprshot
+    hyprshell
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -23,6 +28,8 @@
         "$mod SHIFT, K, movewindow, u"
         "$mod SHIFT, H, movewindow, l"
         "$mod SHIFT, L, movewindow, r"
+        ", PRINT, exec, hyprshot -m output -o /home/ellie/data/screenshots"
+        "$mod SHIFT, PRINT, exec, hyprshot -m region -o /home/ellie/data/screenshots"
       ];
 
       monitor = [ ", highres, auto, 1" ];
