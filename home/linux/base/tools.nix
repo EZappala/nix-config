@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     # misc
     libnotify
+    wireshark
   ];
 
   # auto mount usb drives
